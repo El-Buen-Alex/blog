@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
     {
         Storage::disk('public')->deleteDirectory('posts');
         Storage::disk('public')->makeDirectory('posts');
+        Storage::disk('public')->deleteDirectory('users');
+        Storage::disk('public')->makeDirectory('users');
         $this->call(UserSeeder::class);
         Category::factory(4)->create();
         Tag::factory(8)->create();
